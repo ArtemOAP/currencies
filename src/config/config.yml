@@ -1,0 +1,14 @@
+config:
+    routes:
+        currencies:
+           pattern: '/api/currencies/'
+           method: GET
+           public: false
+        currency:
+           pattern: '/api/currency/{id}'
+           method: GET
+           public: false
+        auth:
+           pattern: '/api/auth'
+           method: POST
+           public: true

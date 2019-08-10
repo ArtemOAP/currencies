@@ -1,0 +1,17 @@
+POST http://127.0.0.1/api/auth
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"name":"test","pass":"pas"}
+
+<> 2019-08-10T014526.200.json
+
+###
+
+
+#{
+ #    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9leGFtcGxlLWFwaS5vcmciLCJuYW1lIjoidGVzdCIsImV4cCI6MTU2NTQyMzEyNn0.V5PhqT-Dgr8dShHgqjRRSM0MxdZeotyDvM1uYx_AKtU"
+ #}
+
+

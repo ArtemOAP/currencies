@@ -1,0 +1,299 @@
+GET http://localhost/api/currencies
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9leGFtcGxlLWFwaS5vcmciLCJuYW1lIjoidGVzdCIsImV4cCI6MTU2NTQyMjQ3Mn0.5vDV8rCoO-fwEX6PfrqsiEAN28gAc79YZZWWf1VcgLQ
+
+<> 2019-08-10T014456.200.json
+
+###
+#[
+ #    {
+ #        "id": "1",
+ #        "code": "BCHEUR"
+ #    },
+ #    {
+ #        "id": "2",
+ #        "code": "BCHEUR"
+ #    },
+ #    {
+ #        "id": "3",
+ #        "code": "BCHEUR"
+ #    },
+ #    {
+ #        "id": "4",
+ #        "code": "BCHEUR"
+ #    },
+ #    {
+ #        "id": "5",
+ #        "code": "BCHGBP"
+ #    },
+ #    {
+ #        "id": "6",
+ #        "code": "BCHJPY"
+ #    },
+ #    {
+ #        "id": "7",
+ #        "code": "BCHRUB"
+ #    },
+ #    {
+ #        "id": "8",
+ #        "code": "BCHUSD"
+ #    },
+ #    {
+ #        "id": "9",
+ #        "code": "BCHXRP"
+ #    },
+ #    {
+ #        "id": "10",
+ #        "code": "BTCBCH"
+ #    },
+ #    {
+ #        "id": "11",
+ #        "code": "BTCEUR"
+ #    },
+ #    {
+ #        "id": "12",
+ #        "code": "BTCGBP"
+ #    },
+ #    {
+ #        "id": "13",
+ #        "code": "BTCJPY"
+ #    },
+ #    {
+ #        "id": "14",
+ #        "code": "BTCRUB"
+ #    },
+ #    {
+ #        "id": "15",
+ #        "code": "BTCUSD"
+ #    },
+ #    {
+ #        "id": "16",
+ #        "code": "BTCXRP"
+ #    },
+ #    {
+ #        "id": "17",
+ #        "code": "BTGUSD"
+ #    },
+ #    {
+ #        "id": "18",
+ #        "code": "BYNRUB"
+ #    },
+ #    {
+ #        "id": "19",
+ #        "code": "CADRUB"
+ #    },
+ #    {
+ #        "id": "20",
+ #        "code": "CHFRUB"
+ #    },
+ #    {
+ #        "id": "21",
+ #        "code": "CNYEUR"
+ #    },
+ #    {
+ #        "id": "22",
+ #        "code": "CNYRUB"
+ #    },
+ #    {
+ #        "id": "23",
+ #        "code": "CNYUSD"
+ #    },
+ #    {
+ #        "id": "24",
+ #        "code": "ETHUSD"
+ #    },
+ #    {
+ #        "id": "25",
+ #        "code": "EURAED"
+ #    },
+ #    {
+ #        "id": "26",
+ #        "code": "EURBYN"
+ #    },
+ #    {
+ #        "id": "27",
+ #        "code": "EURGBP"
+ #    },
+ #    {
+ #        "id": "28",
+ #        "code": "EURJPY"
+ #    },
+ #    {
+ #        "id": "29",
+ #        "code": "EURKZT"
+ #    },
+ #    {
+ #        "id": "30",
+ #        "code": "EURRUB"
+ #    },
+ #    {
+ #        "id": "31",
+ #        "code": "EURTRY"
+ #    },
+ #    {
+ #        "id": "32",
+ #        "code": "EURUSD"
+ #    },
+ #    {
+ #        "id": "33",
+ #        "code": "GBPAUD"
+ #    },
+ #    {
+ #        "id": "34",
+ #        "code": "GBPJPY"
+ #    },
+ #    {
+ #        "id": "35",
+ #        "code": "GBPRUB"
+ #    },
+ #    {
+ #        "id": "36",
+ #        "code": "GELRUB"
+ #    },
+ #    {
+ #        "id": "37",
+ #        "code": "GELUSD"
+ #    },
+ #    {
+ #        "id": "38",
+ #        "code": "IDRUSD"
+ #    },
+ #    {
+ #        "id": "39",
+ #        "code": "JPYAMD"
+ #    },
+ #    {
+ #        "id": "40",
+ #        "code": "JPYAZN"
+ #    },
+ #    {
+ #        "id": "41",
+ #        "code": "JPYRUB"
+ #    },
+ #    {
+ #        "id": "42",
+ #        "code": "RUBAED"
+ #    },
+ #    {
+ #        "id": "43",
+ #        "code": "RUBAUD"
+ #    },
+ #    {
+ #        "id": "44",
+ #        "code": "RUBKZT"
+ #    },
+ #    {
+ #        "id": "45",
+ #        "code": "RUBNZD"
+ #    },
+ #    {
+ #        "id": "46",
+ #        "code": "RUBSGD"
+ #    },
+ #    {
+ #        "id": "47",
+ #        "code": "RUBTRY"
+ #    },
+ #    {
+ #        "id": "48",
+ #        "code": "RUBUAH"
+ #    },
+ #    {
+ #        "id": "49",
+ #        "code": "THBCNY"
+ #    },
+ #    {
+ #        "id": "50",
+ #        "code": "THBEUR"
+ #    },
+ #    {
+ #        "id": "51",
+ #        "code": "THBRUB"
+ #    },
+ #    {
+ #        "id": "52",
+ #        "code": "USDAED"
+ #    },
+ #    {
+ #        "id": "53",
+ #        "code": "USDAMD"
+ #    },
+ #    {
+ #        "id": "54",
+ #        "code": "USDAUD"
+ #    },
+ #    {
+ #        "id": "55",
+ #        "code": "USDBYN"
+ #    },
+ #    {
+ #        "id": "56",
+ #        "code": "USDCAD"
+ #    },
+ #    {
+ #        "id": "57",
+ #        "code": "USDGBP"
+ #    },
+ #    {
+ #        "id": "58",
+ #        "code": "USDILS"
+ #    },
+ #    {
+ #        "id": "59",
+ #        "code": "USDJPY"
+ #    },
+ #    {
+ #        "id": "60",
+ #        "code": "USDKGS"
+ #    },
+ #    {
+ #        "id": "61",
+ #        "code": "USDKZT"
+ #    },
+ #    {
+ #        "id": "62",
+ #        "code": "USDMYR"
+ #    },
+ #    {
+ #        "id": "63",
+ #        "code": "USDRUB"
+ #    },
+ #    {
+ #        "id": "64",
+ #        "code": "USDTHB"
+ #    },
+ #    {
+ #        "id": "65",
+ #        "code": "USDUAH"
+ #    },
+ #    {
+ #        "id": "66",
+ #        "code": "USDVND"
+ #    },
+ #    {
+ #        "id": "67",
+ #        "code": "XRPEUR"
+ #    },
+ #    {
+ #        "id": "68",
+ #        "code": "XRPGBP"
+ #    },
+ #    {
+ #        "id": "69",
+ #        "code": "XRPJPY"
+ #    },
+ #    {
+ #        "id": "70",
+ #        "code": "XRPRUB"
+ #    },
+ #    {
+ #        "id": "71",
+ #        "code": "XRPUSD"
+ #    },
+ #    {
+ #        "id": "72",
+ #        "code": "ZECUSD"
+ #    }
+ #]
