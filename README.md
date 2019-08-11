@@ -9,6 +9,11 @@ upload everyday courses
 ```
 0 1 * * * php init_course.php >> /var/log/init_course.log
 ```
+
+add user
+```
+php add_user.php test pas
+```
 sql dump - /var/sql/dump.sql
 
 GET TOKEN
