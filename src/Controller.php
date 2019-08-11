@@ -6,6 +6,9 @@ use App\Api\Core\Request;
 use App\Api\Core\Response;
 use App\Api\Core\Listener;
 
+use App\Api\entity\Currency;
+use App\Api\entity\History;
+use App\Api\entity\User;
 use Firebase\JWT\JWT;
 
 
@@ -23,7 +26,7 @@ class Controller implements ControllerApp
 
     public function __call($name, $arguments)
     {
-        //TODO log not found method $name or method not public
+        // log not found method $name or method not public
         Listener::$logger->err(' log not found method',['method'=>$name]);
     }
 
@@ -31,7 +34,8 @@ class Controller implements ControllerApp
     public function currencies(Request $request):void
     {
         $dbManager = ManagerDb::Connect();
-        $resp = !$dbManager->getErrorMessages()?$dbManager->currencies():$dbManager->getErrorMessages();
+        $currency = Currency::getInstance($dbManager);
+        $resp = !$dbManager->getErrorMessages()?$currency->currencies():$dbManager->getErrorMessages();
         $code = !$dbManager->getErrorMessages()?200:500;
         Response::getInstance()->renderJson($resp,$code);
 
@@ -43,14 +47,10 @@ class Controller implements ControllerApp
 
         $from = $request->getParam('d_from');
         $to = $request->getParam('d_to');
-        $dbManager = ManagerDb::Connect();
-        Response::getInstance()->renderJson($dbManager->find($id,$from,$to));
+        $currencyHistory  = History::getInstance(ManagerDb::Connect());
+        Response::getInstance()->renderJson($currencyHistory->find($id,$from,$to));
     }
-    public function itemsCount(Request $request):void
-    {
-        $dbManager = ManagerDb::Connect();
-        Response::getInstance()->renderJson($dbManager->countItems());
-    }
+
 
     public function auth():void
     {
@@ -63,8 +63,10 @@ class Controller implements ControllerApp
             return;
         }
         Listener::$logger->info("auth try ",$data);
-        //TODO fix example auth
-        if($data['name']=="test" && $data['pass']=="pas"){
+        $user = User::getInstance(ManagerDb::Connect());
+        $hash = $user->hasUser($data['name']);
+        $verify = password_verify($data['pass'],$hash);
+        if($verify){
             $token = array(
                 "iss" => "http://example-api.org",
                 "name" => $data['name'],
