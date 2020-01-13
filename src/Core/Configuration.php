@@ -22,6 +22,17 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->scalarNode('log')->isRequired()->end()
+                ->arrayNode('db')
+                   #  ->arrayPrototype()
+                    ->children()
+                    ->scalarNode('db_host')->isRequired()->end()
+                    ->scalarNode('db_name')->isRequired()->end()
+                    ->scalarNode('db_user')->isRequired()->end()
+                    ->scalarNode('db_pass')->isRequired()->end()
+                    ->end()
+                    #->end()
+            ->end()
                 ->arrayNode('routes')
                     ->arrayPrototype()
                         ->children()

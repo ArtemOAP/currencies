@@ -18,6 +18,9 @@ use Symfony\Component\Config\Resource\FileResource;
 
 class App
 {
+    const CONFIG_CASH = '/var/www/app_var/cash/config.php';
+    public $config;
+
     public function __construct()
     {
     }
@@ -27,6 +30,8 @@ class App
 
         $cache = $this->loadConfig();
         $res = unserialize(file_get_contents($cache->getPath()));
+        $this->config = $res;
+        ManagerDb::setConfig($res['db']);
         $router = Router::getInstance();
         foreach ($res['routes'] as $controllerName=>$route){
             $router->addAllowableRequest(new Request($route['pattern'],$route['method'],$controllerName,$route['public']));
@@ -50,7 +55,8 @@ class App
     protected function init(Router $router)
     {
         $logger = new Logger('APP');
-        $logger->pushHandler(new StreamHandler('var/log/app.log', Logger::WARNING));
+
+        $logger->pushHandler(new StreamHandler( $this->config['log'], Logger::WARNING));
         //Benchmark::begin();
         $controller = Controller::getInstance();
           try{
@@ -67,10 +73,10 @@ class App
      */
     public function loadConfig(): ConfigCache
     {
-        $cachePath = __DIR__ . '/../var/cache/config.php';
-        $cache     = new ConfigCache($cachePath, false);
 
-        if (!$cache->isFresh()) {
+        $cache     = new ConfigCache(self::CONFIG_CASH, false);
+
+        if ( $cache->isFresh()) {
             $locator        = new FileLocator(__DIR__ . '/config/');
             $configFilePath = $locator->locate('config.yml');
             $loader         = new YamlConfigLoader($locator);
@@ -78,7 +84,6 @@ class App
             $processor      = new Processor();
             $configuration  = new Configuration();
             $resource       = new FileResource($configFilePath);
-
             try {
                 $processedConfiguration = $processor->processConfiguration(
                     $configuration,

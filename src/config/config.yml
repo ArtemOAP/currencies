@@ -1,9 +1,16 @@
 config:
+    #without localhost
+    db:
+       db_host: 'mysql'
+       db_user: 'root'
+       db_name: 'currencies'
+       db_pass: 'passwd'
+    log: '/var/www/app_var/log/app.log'
     routes:
         currencies:
            pattern: '/api/currencies/'
            method: GET
-           public: false
+           public: true
         currency:
            pattern: '/api/currency/{id}'
            method: GET
