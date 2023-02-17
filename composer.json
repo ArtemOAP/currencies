@@ -13,7 +13,7 @@
     "require": {
         "php": ">=7.1",
         "monolog/monolog": "^1.24",
-        "firebase/php-jwt": "^5.0",
+        "firebase/php-jwt": "^6.0",
         "symfony/yaml": "^4.2",
         "symfony/config": "^4.2",
         "ext-pdo": "*"
